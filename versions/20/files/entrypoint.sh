@@ -24,6 +24,10 @@ fi
 # Correct broken stuff caused by hooks, inherited docker images, mounts from host.
 chmod a+rwxt /tmp
 
+# Append node programs path to PATH environment variable
+echo >> /home/node/.profile
+echo 'PATH="./node_modules/.bin:$PATH"' >> /home/node/.profile
+
 # Run command
 if [ "$CMD" != 'startup' ]; then
     exec gosu $RUN_AS_USER:$RUN_AS_GROUP "$@"

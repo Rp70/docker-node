@@ -16,5 +16,5 @@ if [ "$MAP_WWW_UID" != "no" ]; then
     usermod -u $uid node 2> /dev/null && {
       groupmod -g $gid node 2> /dev/null || usermod -a -G $gid node
     }
-    chown -cR node.node /home/node
+    chown -cR node:node /home/node
 fi

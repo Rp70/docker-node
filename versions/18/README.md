@@ -1,5 +1,5 @@
 # Node Docker image with advanced customs
-- Versions: 18
+- Versions (LTS only): 18, 20, 22
 - Container base: Debian, slim image.
 
 ## Features
