@@ -7,7 +7,10 @@ ENV DEBIAN_FRONTEND noninteractive
 # Installing some tools
 RUN set -ex \
   && apt update \
-  && apt install -y curl
+  && apt install -y curl \
+  # Install pnpm globally (fast, compatible across Node versions)
+  && npm install -g pnpm@latest \
+  && pnpm --version
 
 # Grab gosu for easy step-down from root
 ENV GOSU_VERSION 1.17

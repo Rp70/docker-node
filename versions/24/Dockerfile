@@ -1,4 +1,4 @@
-FROM node:18-slim
+FROM node:24-slim
 LABEL maintainer="https://github.com/Rp70/docker-node"
 
 # Set noninteractive mode for apt-get
