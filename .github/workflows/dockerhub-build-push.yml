@@ -2,7 +2,7 @@ name: Build and push Docker images
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ '18', '20', '22', '24' ]
+        node-version: ["18", "20", "22", "24"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
