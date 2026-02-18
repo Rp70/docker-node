@@ -25,6 +25,16 @@ COPY files/entrypoint.sh /entrypoint.sh
 RUN set -ex && \
   chmod +x /entrypoint.sh
 
+# Install build tools required by node-gyp (e.g. better-sqlite3)
+RUN set -ex \
+  && apt-get update \
+  && apt-get install -y --no-install-recommends \
+  python3 \
+  make \
+  g++ \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+
 # Clean up
 RUN set -ex && \
   apt-get clean && \
